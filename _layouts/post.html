@@ -53,14 +53,22 @@ layout: compress
             </time>
             <span itemprop="readingTime" itemscope itemtype="https://schema.org/Duration">
               {% assign words = content | number_of_words %}
-              {{ words | divided_by: 180 }} min read
+              {% if words < 360 %}
+                1
+              {% else %}
+                {{ words | divided_by: 180 }}
+              {% endif %} min read
             </span>
             <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">
               {{ page.date | date: "%b %d, %Y" }}
             </time>
             <span hidden itemprop="readingTime">
               {% assign words = content | number_of_words %}
-              {{ words | divided_by: 180 }} min read
+              {% if words < 360 %}
+                1
+              {% else %}
+                {{ words | divided_by: 180 }}
+              {% endif %} min read
             </span>
             <span hidden itemprop="image">{{ page.image }}</span>
             <span hidden itemprop="mainEntityOfPage">{{ page.excerpt }}</span>
