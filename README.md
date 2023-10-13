@@ -1,6 +1,6 @@
 # My blog
 
-Welcome to the code of [Baran's blog](https://github.com/cjxe/blog)!
+Welcome to the code of [Baran's blog](https://regal-shortbread-d385bf.netlify.app/)!
 
 ## Installation
 
