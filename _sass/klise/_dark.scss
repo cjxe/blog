@@ -75,16 +75,6 @@ body[data-theme="dark"] {
   // Post Meta
   .post-meta {
     color: $dark-gray;
-
-    time {
-      &::after {
-        background-color: $dark-light;
-      }
-    }
-
-    span[itemprop="author"] {
-      border-color: $dark-light;
-    }
   }
 
   // Link

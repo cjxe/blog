@@ -49,21 +49,11 @@
 
   time {
     position: relative;
-    margin-right: 1.5em;
 
     &::after {
-      background: $light;
-      bottom: 1px;
-      content: " ";
-      height: 2px;
-      position: absolute;
-      right: -20px;
-      width: 12px;
+      margin: 0em 0.25em;
+      content: "•";
     }
-  }
-
-  span[itemprop="author"] {
-    border-bottom: 1px dotted $light;
   }
 }
 
