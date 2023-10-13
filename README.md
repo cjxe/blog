@@ -1,6 +1,6 @@
 # My blog
 
-Welcome to the code of Baran's blog!
+Welcome to the code of [Baran's blog](https://github.com/cjxe/blog)!
 
 ## Installation
 
