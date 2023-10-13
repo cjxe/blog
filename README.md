@@ -6,8 +6,8 @@ Welcome to the code of [Baran's blog](https://regal-shortbread-d385bf.netlify.ap
 
 ### Pre-requisites
 
+- [rbenv](https://github.com/carsomyr/rbenv-bundler) *(I recommend only installing this and skipping the rest of the pre-requisites)*
 - [Ruby](https://www.ruby-lang.org/en/)
-- [rbenv](https://github.com/carsomyr/rbenv-bundler) *(optional)*
 - [Bundler](https://bundler.io/)
 
 Steps to run the blog on your local machine:
