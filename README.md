@@ -42,10 +42,11 @@ bundle exec jekyll serve
 http://localhost:4000
 ```
 
-### Settings
+## Settings
 
 Use [this favicon generator](https://realfavicongenerator.net/) to generate favicons.
 
----
+## Acknowledgements
 
-Made with [Klisé](https://github.com/piharpi/jekyll-klise) on Jekyll
+- The theme is [Klisé](https://github.com/piharpi/jekyll-klise) 
+- The CMS is Jekyll
