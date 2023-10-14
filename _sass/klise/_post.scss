@@ -9,7 +9,6 @@
 // Post title
 .header {
   margin-top: 7.8em;
-  margin-bottom: 3em;
 
   .tags {
     margin-left: 3px;
@@ -29,7 +28,7 @@
     font-size: 2em;
     line-height: 1.2;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     &.center {
       text-align: center;
@@ -67,7 +66,7 @@
 
   figure {
     img {
-      border-radius: 2px;
+      border-radius: 6px;
     }
 
     figcaption {
@@ -178,6 +177,27 @@
 
   h6 {
     @include relative-font-size(0.875);
+  }
+
+  // Table of contents
+  details.table-of-contents {
+    margin: 1.5em -27px 0px;
+    @include media-query($on-mobile) {
+      margin: 1.5em calc(51% - 51vw) 0px;
+      padding-left: 20px;
+    }
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    
+    summary {
+      font-weight: $bold-weight;
+    }
+
+    .section-nav{
+      margin-top: 0.5em;
+      margin-bottom: 0px;
+    }
   }
 }
 
