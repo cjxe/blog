@@ -58,13 +58,18 @@
   <meta property="fb:app_id" content="{{ site.fb_appid }}" />
   <meta
     property="og:site_name"
-    content="{% if page.title %}{{ page.title | escape }} • {{
-      site.author.name
-    }}{% else %}{{ site.title | escape }}{% endif %}"
+    content="{{ page.date | date: '%b %d, %Y' }} • 
+    {% assign words = content | number_of_words %}
+    {% if words < 360 %}
+      1
+    {% else %}
+      {{ words | divided_by: 180 }}
+    {% endif %} min read
+    "
   />
   <meta
     property="og:title"
-    content="{% if page.title %}{{ page.title | escape }} | {{
+    content="{% if page.title %}{{ page.title | escape }} • {{
       site.author.name
     }}{% else %}{{ site.title | escape }}{% endif %}"
   />
