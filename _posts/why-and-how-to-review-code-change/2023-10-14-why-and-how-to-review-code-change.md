@@ -33,7 +33,7 @@ Hiring more people decreases the *quality* of the solution, and it's pretty hard
 	<figcaption>The project management triangle</figcaption>
 </figure>
 
-Imagine that we are a dot in the triangle. We may only stay in a single spot. According to this triangle, when we hire more people, the cost will increase, so the time time and the amount of features it introduces will decrease.
+Imagine that we are a dot in the triangle. We may only stay in a single spot. According to this triangle, when we hire more people, the cost will increase, so the time and the amount of features it introduces will decrease.
 
 Depending on the business model, the project managers might be more lenient on one side; however, most businesses aim to be in the middle. Luckily, there are **many examples** of companies and their practices which **proved to be successful** in solving big problems by managing many people and yet maintaining a high quality for their solutions. So, I went through some of the most money-generating big and tech businesses, and read their **Software Engineering handbooks** (e.g., [Google's handbook](https://abseil.io/resources/swe-book)). I learned how they achieve high-quality solutions with many people, and I will be sharing my understanding.
 
@@ -65,6 +65,8 @@ YES! WE JUST DISCOVERED THE TERM **"CODE REVIEW"** 🥳👯🪩🥂
 
 Due to time constraints, we can't compare every single solution to each other, but we can hire better problem solvers and make only a few review each other's code. 
 
+Furthermore, imagine the peer review was done not just verbally, but also written. So, the changes and comments will act as a **historical record**.
+
 ## Sharing is caring
 
 As well as achieving a high quality, code review has other benefits.
@@ -82,7 +84,7 @@ Surprisingly, **Google doesn't have a strict set of rules** on how to perform co
 
 ## Dividing the workload
 
-However, there are 3 main points/rules that Google likes to pay specific attention to: 
+However, there are 3 main points that Google likes to pay specific attention to: 
 - **comprehensiveness** and **correctness**
 - **consistency**
 - **readability**
@@ -152,7 +154,7 @@ These roles may be done by different individuals, but usually, **the same person
 Google introduced some **abbreviations** to speed up the code reviewing. The most popular abbreviations that are used by the reviewer are:
 - **LGTM** (looks good to me): Approves the comprehensiveness and correctness of the change.
 - **FYI** (for your information): No action is required, but note to the author.
-- **PTAL** (please take another look): When the reviewer disagrees with the owner, they can offer an alternative and ask the reviewer to take another look at their comment.
+- **PTAL** (please take another look): When the reviewer disagrees with the owner, they should recommend an alternative solution and ask the reviewer to take another look at their comment.
 
 ## Robot shortcuts
 
@@ -189,17 +191,20 @@ Google has a step before submitting the change: **presubmit**. A presubmit proce
 - **Replace "you" with "we"**
 	- ❌ Can you record a demo?
 	- ✅ Can we have a demo?
-- **Don't reject a just because the approach is different**
+- **Don't reject a change just because the approach is different**
 	- As long as the given solution is within the agreed standards, don't point out an approach just because it's your personal preference  
 
+# Conclusion
 
+We started the discussion with needing money to live and be happier. Then, we mentioned how to make money (e.g., solving problems), and what increases the monetary reward (e.g., the bigger the problem and the better the solution, the bigger the reward).
 
+After finding the motivation to do bigger and better, we provided an example to find the origins of code review. Then, we went into detail on why code review is important, and the best practices that Google follows to maximise the reward.
 
 # TL;DR
 
-- "Change" is a historical record.
-- CRing a change improves the solutions by combining better qualities of different solutions/perspectives.
-- CR helps with sharing knowledge, decreasing imposter syndrome, and making the engineer feel part of a team.
+- Code review is a peer review and a historical record of that change.
+- Code review improves the solutions by combining better qualities of different solutions/perspectives.
+- Code review helps with sharing knowledge, decreasing imposter syndrome, and making the engineer feel part of a team.
 - Avoid setting strict rules, because creative solutions require relaxed environments.
 - When CRing, check for the following qualities:
 	<details>
