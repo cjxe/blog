@@ -1,9 +1,9 @@
 ---
-title: Why and how to review code change
+title: "How to steal my heart (and approval): A code reviewer's dream"
 date: 2023-10-14 08:38:03 +00:00
-modified: 2023-10-13 08:38:02 +00:00
+modified: 2023-10-16 08:20:02 +00:00
 tags: [tech]
-description: Why and how to review code change
+description: What, why and how to review changed code
 toc: true
 ---
 Before diving into the topic of code reviews, I will be very presumptuous and make a ridiculous assumption: **we need to live**. If you disagree and/or are depressed, please continue reading not because I will cure your depression, but because I list some ideas that *might* motivate you and your team to do some code reviews.
@@ -206,7 +206,7 @@ After finding the motivation to do bigger and better, we provided an example to 
 - Code review improves the solutions by combining better qualities of different solutions/perspectives.
 - Code review helps with sharing knowledge, decreasing imposter syndrome, and making the engineer feel part of a team.
 - Avoid setting strict rules, because creative solutions require relaxed environments.
-- When CRing, check for the following qualities:
+- When reviewing a code, check for the following qualities:
 	<details>
 	<summary>comprehensiveness and correctness</summary>
 	<ul>
