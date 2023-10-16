@@ -29,8 +29,8 @@ Solving bigger problems is easy: just **hire more** people! However, there is a 
 Hiring more people decreases the *quality* of the solution, and it's pretty hard to maintain or increase it. This problem is commonly known as the **project management triangle**[.](https://en.wikipedia.org/wiki/Project_management_triangle)
 
 <figure>
-	<img src="/why-and-how-to-review-code-change/project-management-triangle.png" alt="project management triangle">
-	<figcaption>The project management triangle</figcaption>
+	<img src="/how-to-steal-my-heart-and-approval-a-code-reviewers-dream/project-management-triangle-with-comments.png" alt="project management triangle with comments">
+	<figcaption>The project management triangle (with comments, read the next paragraph)</figcaption>
 </figure>
 
 Imagine that we are a dot in the triangle. We may only stay in a single spot. According to this triangle, when we hire more people, the cost will increase, so the time and the amount of features it introduces will decrease.
