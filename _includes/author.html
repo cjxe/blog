@@ -5,5 +5,28 @@
     alt="{{ site.author.username }}"
   />
   <h2 class="author-name">{{ site.author.name }}</h2>
-  <p class="author-bio">{{ site.author.bio }}</p>
-</div>
+  <p class="author-bio">
+    <span hidden>Refresh the website for a new bio!</span>
+    <span hidden>CONGRATULATIONS!! YOU HAVE RECEIVED NOTHING! 🎊🥳🍾</span>
+    <span hidden>Inflation is not real.</span>
+    <span hidden>Once upon a time a wealthy, cheerful man said “Money can’t buy happiness!”.</span>
+    <span hidden>Supercalifragilisticexpialidocious</span>
+    <span hidden>"If you can't explain it simply, you don't understand it well enough." -Albert Einstein</span>
+    <span hidden>"All animals are equal, but some are more equal than others." -Animal Farm by George Orwell</span>
+    <span hidden>"Ignorance is bliss"</span>
+    <span hidden>Economy (oikos + nomos) (n.): Frugality, careful use of resources.</span>
+    <span hidden>Economy (philo + sophia) (n.): Love of wisdom.</span>
+    <span hidden>Break. It. Down.</span>
+    <span hidden>Reverse engineering the human brain.</span>
+  </p>
+
+  <script>
+    const allBios = document.body.getElementsByTagName('span');
+    const randomIndexOfBio = Math.floor(Math.random() * (0 - allBios.length + 1)) + allBios.length;
+    const myRandomSpan = allBios[randomIndexOfBio];
+    myRandomSpan.removeAttribute('hidden');
+  </script>
+
+  </div>
+
+

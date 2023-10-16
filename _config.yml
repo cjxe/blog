@@ -12,7 +12,7 @@ mode: dark # default theme "dark" | "light"
 author:
   name: Baran # author name
   bio: >- # tell to the world
-    Reverse engineering the human brain.
+    Ideas, essays and projects by Baran.
   username: Baran # general username
   github: cjxe # github username
   twitter: # twitter username
