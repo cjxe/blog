@@ -3,7 +3,7 @@ title: "How to steal my heart (and approval): A code reviewer's dream"
 date: 2023-10-14 08:38:03 +00:00
 modified: 2023-10-16 08:20:02 +00:00
 tags: [tech]
-description: What, why and how to review changed code
+description: What, why and how to review changed code.
 toc: true
 ---
 Before diving into the topic of code reviews, I will be very presumptuous and make a ridiculous assumption: **we need to live**. If you disagree and/or are depressed, please continue reading not because I will cure your depression, but because I list some ideas that *might* motivate you and your team to do some code reviews.
