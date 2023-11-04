@@ -213,6 +213,14 @@
     max-width: 393px;
     line-height: 1.688;
   }
+
+  .author-bio-footer{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: small;
+    // cursor: pointer;
+  }
 }
 
 // Table of contents
