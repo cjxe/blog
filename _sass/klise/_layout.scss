@@ -219,7 +219,6 @@
     align-items: center;
     gap: 0.5em;
     font-size: small;
-    // cursor: pointer;
   }
 }
 
@@ -395,4 +394,11 @@
     border: 1px solid rgba(128, 128, 128, 0.1);
     background-color: rgba(128, 128, 128, 0.1);
   }
+}
+
+.rock-paper-scissors-button {
+  border: none; 
+  background: none; 
+  color: $text-base-color;
+  cursor: pointer;
 }
