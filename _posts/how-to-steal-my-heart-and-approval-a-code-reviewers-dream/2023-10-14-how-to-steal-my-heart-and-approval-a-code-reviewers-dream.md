@@ -1,7 +1,7 @@
 ---
 title: "How to steal my heart (and approval): A code reviewer's dream"
 date: 2023-10-14 08:38:03 +00:00
-modified: 2023-10-16 08:20:02 +00:00
+modified: 2024-05-04 10:30:02 +00:00
 tags: [tech]
 description: What, why and how to review changed code.
 toc: true
@@ -85,40 +85,31 @@ Surprisingly, **Google doesn't have a strict set of rules** on how to perform co
 ## Dividing the workload
 
 However, there are 3 main points that Google likes to pay specific attention to: 
-- **comprehensiveness** and **correctness**
+- **correctness**
 - **consistency**
-- **readability**
+- **language readability/code quality**
 
-And they split these *quality checks* among **3 roles**:
+And they distribute these responsibilities to **3 roles**:
 
-1. The first role (who is familiar with the code and passed "the process of code readability training in a particular language") approves the correctness and comprehensiveness
+1. The first role (who is familiar with the code and passed "the process of code readability training in a particular language") approves the correctness
 	<details>
-	<summary>comprehensiveness and correctness</summary>
+	<summary>correctness <i>(click on the "▶" to expand!)</i></summary>
 	<ul>
-		<li>comprehensiveness</li>
+		<li><b>Correctness</b>: Is the expected behaviour equal to the current behaviour? Can I answer "Why would this solution NOT work"?</li>
 			<ul>
-				<li><b>Do you</b> (the first person who reviews after the solution's author) <b>understand the solution?</b></li>
+				<li><b>Scope</b>: Is there any part of the change that is out-of-scope?</li>
+				<li><b>Planning</b>: Did the author make any assumptions?</li>
+				<li><b>Different parts</b>:</li>
 				<ul>
-					<li>e.g., do variable/function names make sense?</li>
+					<li><b>Data structure</b>: Could we reuse existing ones? Are there any memory leaks?</li>
+					<li><b>Algorithm</b>: Does it have optimal space and time complexity?</li>
+					<li><b>Design</b>: Carefully inspect the design and compare it with the current result.</li>
+					<li><b>Security</b>: Is any secret exposed?</li>
 				</ul>
+				<li><b>Outside the box</b>: Did the author consider and handle edge cases?</li>
+				<li><b>Tests</b>: Does the code have automated tests that cover all the new functionality including edge cases?</li>
+				<li><b>Documentation</b>: Did the developer update the relevant documentation?</li>
 			</ul>
-			<li>correctness</li>
-				<ul>
-					<li><b>Is the solution correct?</b></li>
-						<ul>
-							<li>Manually run through the test cases</li>
-							<li>Verify the demo if one is attached</li>
-						</ul>
-					<li><b>Does to solution have a good time and space complexity?</b></li>
-					<li><b>Are there any automated tests that cover the solution?</b></li>
-					<li><b>Are there any bugs?</b></li>
-						<ul>
-							<li>Test some edge cases</li>
-							<li>QA assists with this step</li>
-						</ul>
-					<li><b>Can it introduce more bugs in the future?</b></li>
-					<li><b>Is the solution well documented?</b></li>
-				</ul>
 	</ul>
 	</details>
 
@@ -126,24 +117,22 @@ And they split these *quality checks* among **3 roles**:
 	<details>
 	<summary>consistency</summary>
 	<ul>
-		<li><b>Is there any part that can be rewritten with existing functions/variables?</b></li>
-			<ul>
-				<li>Look out for duplicate code</li>
-			</ul>
-		<li><b>Is the code consistent with itself and its related files?</b></li>
+		<li><b>Consistency</b>: Is there any part that can be rewritten with existing functions/variables? Answering this question requires good knowledge of the codebase.</li>
+		<ul>
+			<li><b>Modularisation/Maintainability</b>: Is the code flexible enough to be reused in the <i>near</i> future?</li>
+		</ul>
 	</ul>
 	</details>
 
 3. The third role (who is not very familiar with the particular codebase) approves the language readability
 	<details>
-	<summary>language readability</summary>
+	<summary>language readability/code quality</summary>
 	<ul>
-		<li><b>Do you understand the solution?</b></li>
-		<li><b>Is the solution not complex?</b></li>
-			<ul>
-				<li>e.g., do variable/function names make sense?</li>
-			</ul>
-		<li><b>Does the solution follow the team's/company's/language's styling guides and best practices?</b></li>
+		<li><b>Language readability/code quality</b>: Can I read the diff seamlessly?</li>
+		<ul>
+			<li><b>Naming</b>: Did the author choose clear names for variables, classes, methods, etc.?</li>
+			<li><b>Style</b>: Does the code follow our style guides (e.g., ESLint rules, Prettier rules, some of <a href="http://google.github.io/styleguide/">Google's style guide</a>)? Don't make comments on personal preference.</li>
+		</ul>
 	</ul>
 	</details>
 
@@ -203,38 +192,53 @@ After finding the motivation to do bigger and better, we provided an example to 
 # TL;DR
 
 - Code review is a peer review and a historical record of that change.
-- Code review improves the solutions by combining better qualities of different solutions/perspectives.
+- Code review improves the solutions by combining better qualities of different solutions and perspectives.
 - Code review helps with sharing knowledge, decreasing imposter syndrome, and making the engineer feel part of a team.
 - Avoid setting strict rules, because creative solutions require relaxed environments.
 - When reviewing a code, check for the following qualities:
 	<details>
-	<summary>comprehensiveness and correctness</summary>
+	<summary>correctness <i>(click on the "▶" to expand!)</i></summary>
 	<ul>
-	<li>correct solution</li>
-	<li>easy to understand</li>
-	<li>efficient</li>
-	<li>bug-free</li>
-	<li>tested</li>
-	<li>documented</li>
+		<li><b>Correctness</b>: Is the expected behaviour equal to the current behaviour? Can I answer "Why would this solution NOT work"?</li>
+			<ul>
+				<li><b>Scope</b>: Is there any part of the change that is out-of-scope?</li>
+				<li><b>Planning</b>: Did the author make any assumptions?</li>
+				<li><b>Different parts</b>:</li>
+				<ul>
+					<li><b>Data structure</b>: Could we reuse existing ones? Are there any memory leaks?</li>
+					<li><b>Algorithm</b>: Does it have optimal space and time complexity?</li>
+					<li><b>Design</b>: Carefully inspect the design and compare it with the current result.</li>
+					<li><b>Security</b>: Is any secret exposed?</li>
+				</ul>
+				<li><b>Outside the box</b>: Did the author consider and handle edge cases?</li>
+				<li><b>Tests</b>: Does the code have automated tests that cover all the new functionality including edge cases?</li>
+				<li><b>Documentation</b>: Did the developer update the relevant documentation?</li>
+			</ul>
 	</ul>
 	</details>
 	<details>
 	<summary>consistency</summary>
 	<ul>
-	<li>maintainable</li>
-	<li>fits the larger codebase</li>
+		<li><b>Consistency</b>: Is there any part that can be rewritten with existing functions/variables? Answering this question requires good knowledge of the codebase.</li>
+		<ul>
+			<li><b>Modularisation/Maintainability</b>: Is the code flexible enough to be reused in the <i>near</i> future?</li>
+		</ul>
 	</ul>
 	</details>
 	<details>
-	<summary>language readability</summary>
+	<summary>language readability/code quality</summary>
 	<ul>
-	<li>stylish</li>
+		<li><b>Language readability/code quality</b>: Can I read the diff seamlessly?</li>
+		<ul>
+			<li><b>Naming</b>: Did the author choose clear names for variables, classes, methods, etc.?</li>
+			<li><b>Style</b>: Does the code follow our style guides (e.g., ESLint rules, Prettier rules, some of <a href="http://google.github.io/styleguide/">Google's style guide</a>)? Don't make comments on personal preference.</li>
+		</ul>
 	</ul>
 	</details>
 - Automate processes to decrease the workload of the reviewer.
 - Optimise for the reader, over-communicate.
-- Keep the change short, <200 lines.
-- Review a change within 24 hours, done work > undone work.
+- Keep the change short, less than 200 lines.
+- Review a change within 24 hours, done work is better than undone work.
 - Never assume, always ask.
-- Thank the author.
+- Be kind.
 
