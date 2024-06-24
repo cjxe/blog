@@ -50,3 +50,7 @@ Use [this favicon generator](https://realfavicongenerator.net/) to generate favi
 
 - The theme is [Klisé](https://github.com/piharpi/jekyll-klise) 
 - The CMS is Jekyll
+
+## Todo
+- [ ] add "copy link" icon/button after `anchor-head`
+- [ ] add "page progress" feature at the top
