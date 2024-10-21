@@ -1,5 +1,5 @@
 ---
-title: A simple and practical guide to communicating effectively
+title: "How to communicate effectively: a simple and practical guide"
 date: 2024-10-20 07:29:23 +00:00
 tags: [productivity, psychology]
 description: A simple and practical guide to communicating with examples of real-world messages.
@@ -95,17 +95,17 @@ Perhaps *communicating* is the most important skill when working with other peop
 <ol>
   <li>
     <figure>
-      <img src="/a-simple-and-practical-guide-to-communicating-effectively/example-message-1-do-you-wear-merino.png" alt="Example message #1">
+      <img src="/how-to-communicate-effectively/example-message-1-do-you-wear-merino.png" alt="Example message #1">
     </figure>
   </li>
   <li>
     <figure>
-      <img src="/a-simple-and-practical-guide-to-communicating-effectively/example-message-2-done-reviewing-pr.png" alt="Example message #1">
+      <img src="/how-to-communicate-effectively/example-message-2-done-reviewing-pr.png" alt="Example message #2">
     </figure>
   </li>
   <li>
     <figure>
-      <img src="/a-simple-and-practical-guide-to-communicating-effectively/example-message-3-unblocking-ticket.png" alt="Example message #1">
+      <img src="/how-to-communicate-effectively/example-message-3-unblocking-ticket.png" alt="Example message #3">
     </figure>
   </li>
 </ol>
