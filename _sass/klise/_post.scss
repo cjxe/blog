@@ -194,10 +194,10 @@
 
   // Table of contents
   details.table-of-contents {
-    margin: 1.5em -27px 0px;
+    margin: 1.5em 0 0;
     @include media-query($on-mobile) {
-      margin: 1.5em calc(51% - 51vw) 0px;
-      padding-left: 20px;
+      margin: 1.5em 0 0;
+      padding-left: 12px;
     }
     cursor: pointer;
     border-radius: 6px;
