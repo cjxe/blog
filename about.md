@@ -2,12 +2,10 @@
 title: About me
 permalink: /about/
 layout: page
-excerpt: Hi, I'm Baran. A software engineer who is passionate about learning, being productive, and keeping it simple.
+excerpt: i, I'm Baran — a Software Engineer passionate about technology, psychology and finance. I write this blog to share my organised thoughts and experiences.
 comments: false
 ---
 
-Hi, I'm Baran. A software engineer who is passionate about learning, being productive, and keeping it simple. In this blog, I share my ideas about the things I am passionate about. 
+Hi, I'm Baran — a Software Engineer passionate about **technology**, **psychology** and **finance**. I write this blog to share my organised thoughts and experiences.
 
-I hope you enjoy your stay! ❤️
-
-You can [report any issues](http://github.com/cjxe/blog/issues/new) that you come across in the blog.
+I hope you enjoy your stay, and invite you to leave a comment to share your perspective!
