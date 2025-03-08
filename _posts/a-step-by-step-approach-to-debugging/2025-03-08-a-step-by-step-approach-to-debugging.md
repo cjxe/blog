@@ -27,11 +27,7 @@ After successfully debugging many issues at work and in real life, and preventin
 
 ## 1. Be in a good mental state.
 
-Being in a bad state increases the sensitivity of feelings and emotions, which decreases objectivity in finding a better solution. 
-
-E.g., I needed to drill 2 holes in the bathroom wall to hang a drawer. I felt stressed to the point that it negatively affected my hand coordination. I tried to ignore the over-stress and started drilling. The result was misaligned holes. Then, I spent even more time trying to fix it.
-
-So, before making a decision, I check my mental state, and I proceed accordingly.
+Being in a bad state increases the sensitivity of feelings and emotions, which decreases objectivity in finding a better solution. So, before making a decision, I check my mental state, and I proceed accordingly.
 
 If I am in a bad mental state, I do some of the following to feel better:
 
@@ -101,6 +97,7 @@ Despite following a step-by-step approach, progress might not be linear; and tha
 Sometimes, a single perspective can't see the solution. So, I ask others to get their perspective on the situation. However, effectively communicating the situation is a skill in itself, and I have a [practical guide](https://baransblog.com/how-to-communicate-effectively-a-simple-and-practical-guide/) on how to do it efficiently.
 
 - AI.
+- Forum/community.
 - Real people.
 
 # Next steps
