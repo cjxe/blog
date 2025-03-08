@@ -6,11 +6,11 @@ description: A step-by-step approach to debugging while striking a balance betwe
 toc: true
 ---
 
-I have a reputation for fixing issues "quickly" while maintaining high quality. 
+I have a reputation for identifying and removing errors (debugging) "quickly" while maintaining high quality. 
 
 But how do I fix bugs so quickly?
 
-After successfully fixing many issues at work and in real life, and preventing the same mistakes from happening again, I developed a step-by-step approach to strike a good balance between speed and quality.
+After successfully debugging many issues at work and in real life, and preventing the same mistakes from happening again, I developed a step-by-step debugging approach to maintaining a good balance between speed and quality.
 
 # High-level debugging steps
 
