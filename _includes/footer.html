@@ -18,10 +18,13 @@
   </div>
   <small class="footer_copyright">
     <!-- Klisé Theme: https://github.com/piharpi/jekyll-klise -->
-    <span class="footer_item">{{ site.time | date: "%Y" }}</span>
+    <span class="footer_item" id="year"></span>
   </small>
 </footer>
 <script src="/assets/js/main.js" defer="defer"></script>
+<script>
+  document.getElementById("year").textContent = `20${new Date().getFullYear().toString().slice(-2)}`;
+</script>
 {%- if site.google_analytics -%}
   <!-- Google tag (gtag.js) -->
   <script
