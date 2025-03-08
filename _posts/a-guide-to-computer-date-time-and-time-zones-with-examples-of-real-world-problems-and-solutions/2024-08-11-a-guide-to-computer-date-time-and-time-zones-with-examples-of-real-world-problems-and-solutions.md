@@ -1,7 +1,7 @@
 ---
 title: "A guide to computer date, time and time zones with examples of real-world problems and solutions"
 date: 2024-08-11 17:52:49 +02:00
-tags: [tech]
+tags: [technology]
 description: A guide to computer date, time and time zones with examples of real-world problems and solutions.
 toc: true
 ---

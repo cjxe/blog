@@ -2,7 +2,7 @@
 title: "How to steal my heart (and approval): A code reviewer's dream"
 date: 2023-10-14 08:38:03 +00:00
 modified: 2024-05-04 10:30:02 +00:00
-tags: [tech]
+tags: [technology]
 description: What, why and how to review changed code.
 toc: true
 ---

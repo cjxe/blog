@@ -1,7 +1,7 @@
 ---
 title: "A systematic approach to debugging"
 date: 2025-03-08 11:37:01 +00:00
-tags: [tech]
+tags: [technology]
 description: A step-by-step approach to debugging while striking a balance between speed and quality.
 toc: true
 ---

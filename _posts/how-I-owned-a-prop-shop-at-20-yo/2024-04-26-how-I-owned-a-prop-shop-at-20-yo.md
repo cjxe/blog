@@ -2,7 +2,7 @@
 title: "How I owned a prop shop at 20 y.o."
 date: 2024-04-26 23:44:44 +01:00
 modified: 2024-04-26 23:44:44 +01:00
-tags: [finance, tech]
+tags: [finance, technology]
 description: The long story of how my trading journey started, and how I owned a prop shop by the time I was 20.
 toc: true
 ---
