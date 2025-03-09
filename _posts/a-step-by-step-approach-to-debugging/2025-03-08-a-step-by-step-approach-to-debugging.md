@@ -94,7 +94,7 @@ Despite following a step-by-step approach, progress might not be linear; and tha
 
 ## 8. Ask for help.
 
-Sometimes, a single perspective can't see the solution. So, I ask others to get their perspective on the situation. However, effectively communicating the situation is a skill in itself, and I have a [practical guide](https://baransblog.com/how-to-communicate-effectively-a-simple-and-practical-guide/) on how to do it efficiently.
+Sometimes, a single perspective can't see the solution. So, I ask others to get their perspective on the situation. However, effectively communicating the situation is a skill in itself, so I wrote a <a href="https://baransblog.com/how-to-communicate-effectively-a-simple-and-practical-guide" target="_blank">practical efficient communication guide</a>.
 
 - AI.
 - Forum/community.
