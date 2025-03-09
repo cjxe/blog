@@ -1,6 +1,7 @@
 ---
 title: "A guide to computer date, time and time zones with examples of real-world problems and solutions"
 date: 2024-08-11 17:52:49 +02:00
+modified: 2025-03-09 08:11:45 +00:00
 tags: [technology]
 description: A guide to computer date, time and time zones with examples of real-world problems and solutions.
 toc: true
@@ -11,27 +12,33 @@ toc: true
 
 # The birth of computer time
 
-As computers evolved from human calculators to digital machines, computer developers needed an efficient way for humans (i.e., especially *programmers*) to interact with these new devices. This led to the creation of operating systems (OS).
+As computers evolved from human calculators to digital machines, their creators required practical methods to improve computers' user experience. So, they developed operating systems (OS).
 
-With OS-equipped computers, programmers tackled various challenges, including the need to calculate time differences. To solve issues that required calculating time differences, computer developers developed a time-calculation system.
+With OS-equipped computers, computer users tackled various challenges, including the need to calculate date and time differences. So, OS engineers developed a time-calculation system.
 
-UNIX, an influential early OS, introduced a solution with 2 assumptions to calculate time differences:
-1. **Start date**: UNIX computers established a fixed starting point called the UNIX epoch at 00:00:00 UTC on January 1, 1970. This acts as the starting date and time for most computers, similar to how "Year 0" is set in the Gregorian calendar we use today.
-2. **Time representation**: UNIX time is measured as the number of seconds (or smaller units like milliseconds or nanoseconds) elapsed since the UNIX epoch. E.g., as I write this sentence within this blog post, the UNIX time is 1723306952, indicating that many seconds have passed since the start of the UNIX epoch. 
+UNIX (an influential early OS) introduced a solution with 2 assumptions to calculate date and time differences:
+1. **Start date**: UNIX computers established a fixed starting point which is set to January 1 1970, 00:00:00 UTC (i.e., UNIX epoch<small id="reference-epoch"><sup>[[1]](#definition-epoch)</sup></small>). This acts as the starting date and time for most computers, similar to how "Year 0" is set in the Gregorian calendar we use today.
+2. **Time representation**: UNIX time is measured as the number of seconds (or milliseconds) elapsed since the UNIX epoch. E.g., as I write this sentence within this blog post, the UNIX time is 1723306952 seconds, indicating that many seconds have passed since the start of the UNIX epoch. 
 
-Some problems included calculating time differences that included the *current* date and time, so programmers needed to know the current time. But how did the computers know their *current* UNIX time?
+Some problems included calculating date and time differences that included the *current* date and time, so computer users needed to know the current time. 
 
-**Epoch** (noun): the beginning of a period in the history of someone or something.
+But how did the computers know their *current* time?
 
-**UTC (Coordinated Universal Time)** (noun): a time standard that follows the Greenwich Mean Time (GMT) without Daylight Savings Time (DST) adjustments.
+---
+
+<small id="definition-epoch"><sup>[[1]](#reference-epoch)</sup>**Epoch** (noun): the beginning of a period in the history of someone or something.</small>
 
 # How computers' know their current time
 
-**Clock** (noun): A mechanical or electrical device for measuring time, indicating hours, minutes, and sometimes seconds by hands on a round dial or by displayed figures.
+There are 2 clocks<small id="reference-clock"><sup>[[2]](#definition-clock)</sup></small> in a computer to track the current time:
+1. **Hardware clock** (a.k.a. Real-time clock): The machine's hardware tracks a clock using a battery and circuits. It is recommended to set this clock to UTC<small id="reference-UTC"><sup>[[3]](#definition-UTC)</sup></small>, but you can also configure an additional "time zone" property to align this clock with your local time. E.g., Windows sets the hardware's clock to the user's local time; whereas MacOS and Linux set their hardware clock to UTC.
+2. **System clock**: The system clock is dependent on the hardware clock, and managed by the OS's kernel. The OS reads the hardware clock, but also is in sync with the other clocks on the internet. When an app wants to access your machine's clock, it accesses this clock.
 
-There are 2 clocks in a computer to track the current time:
-1. **Hardware clock** (a.k.a. Real-time clock): The machine's hardware tracks a clock using a battery and circuits. You are encouraged to match this clock to UTC (the reason is explained in the [Best practices when working with date, time and local time in an international app](#best-practices-when-working-with-date-time-and-local-time-in-an-international-app) chapter), but you can set the time zone to your local time (which is the current time in your current time zone). E.g., Windows sets the hardware's clock to the user's local time; whereas MacOS and Linux set their hardware clock to UTC.
-2. **System clock**: The system clock is dependent on the hardware clock, and managed by the OS's kernel. The OS reads the hardware clock, but also is in sync with the other clocks on the internet. When an app wants to access your machine's clock, it accesses the system clock (and the `TZ` variable which I will explain later in the [Accessing local time and time zone](#accessing-local-time-and-time-zone) chapter).
+---
+
+<small id="definition-clock"><sup>[[2]](#reference-clock)</sup>**Clock** (noun): A mechanical or electrical device for measuring time, indicating hours, minutes, and sometimes seconds by hands on a round dial or by displayed figures.</small>
+
+<small id="definition-UTC"><sup>[[3]](#reference-UTC)</sup>**Coordinated Universal Time (UTC)** (noun): a time standard that follows the Greenwich Mean Time (GMT) without Daylight Savings Time (DST) adjustments.</small>
 
 # Accessing the system clock in an OS (e.g., MacOS and Linux)
 
@@ -39,7 +46,7 @@ If you are on MacOS or Linux, you may access the system clock by running the `da
 
 ```bash
 > date
-Thu 28 Mar 2024 18:10:10 CET
+Thu 28 Mar 2024 18:10:10 CET # This command applies the time zone offset by default.
 
 > date -u 
 Thu 28 Mar 2024 17:10:10 UTC
@@ -48,28 +55,28 @@ Thu 28 Mar 2024 17:10:10 UTC
 1711645810 # The number of seconds that passed since the UNIX epoch. The `-u` flag is applied by default. Think of this number when you think about the _system clock_.
 ```
 
-# Accessing local time and time zone
+# Accessing the local time and time zone
 
-"Internally, your Mac is using UTC. Your Mac is **not** "in CET". It is "in UTC with a default `TZ` setting of `CET`". `TZ` environment variable controls how a local time is derived from the underlying UTC when a local timestamp or timezone offset is required. If you change `TZ`, then local timestamps will be shown in the new timezone, but the computer's internal timekeeping in UTC is not affected[.](https://stackoverflow.com/a/54524475/12959962)"
+"Internally, your Mac is using UTC. Your Mac is not "in CET". It is "in UTC with a default `TZ` setting of `CET`". `TZ` environment variable controls how a local time is derived from the underlying UTC when a local timestamp or timezone offset is required. If you change `TZ`, then local timestamps will be shown in the new timezone, but the computer's internal timekeeping in UTC is not affected." <a href="https://stackoverflow.com/a/54524475/12959962" target="_blank">source</a>
 
-So, when you run `date`, then the command-line utility reads the system clock and the `TZ` environment variable, and prints the current date including the time zone. If you would like to get the current time zone of your computer, you can run the following command in Linux systems:
+So, when you run the `date` command, then the command-line utility reads the system clock and the `TZ` environment variable stored somewhere in the operating system, and returns the current date including the local time zone's offset. If you would like to get the current time zone of your computer, you can run the following command in UNIX-like operating systems:
 ```bash
 > sudo systemsetup -gettimezone 
 Time Zone: Europe/Berlin
 ```
 
-Further reading: [how do computers store and *update/maintain all the different time zone information to keep up with each country’s ever-changing time zone rule*?](https://sdimitro.github.io/post/keeping-track-time/)
+Further reading: <a href="https://sdimitro.github.io/post/keeping-track-time" target="_blank">how do computers store and maintain all the different time zone information to keep up with each country’s ever-changing time zone rule?</a>
 
 # Accessing the system clock and time zone using a programming language (e.g., JavaScript)
 
-Your favourite browser (and many other apps) reads the system clock and the `TZ` environment variable. Open up your browser's DevTools and navigate to the console. Then, paste the following lines:
+Your favourite browser (and many other apps) reads the system clock and the `TZ` environment variable. Open up your browser's DevTools and navigate to the console. Then, run the following code:
 
 ```js
 > const currentDate = new Date();
 > console.log(currentDate)
 Thu Mar 28 2024 18:10:10 GMT+0100 (Central European Standard Time) // Similar to running `date` in a bash shell.
 
-> console.log(tempDate.valueOf()) 
+> console.log(currentDate.valueOf()) 
 1711645810000 // Similar to running `date +"%s"` in a bash shell.
 
 > const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -77,7 +84,7 @@ Thu Mar 28 2024 18:10:10 GMT+0100 (Central European Standard Time) // Similar to
 Europe/Berlin // Similar to running `sudo systemsetup -gettimezone` in a bash shell.
 ```
 
-# Some problems and solutions that I came across
+# Some time calculation problems and their solutions that I came across while software engineering
 
 **Disclaimer**: I obfuscated sensitive information (such as the name of the market/exchange) to prevent any sensitive information from being leaked.
 
@@ -151,8 +158,7 @@ To:
 const currentDate = new Date(new Date().toLocaleString('en-us', { timeZone: currentMarketsTimeZone }));
 ```
 
-
-[Further explanation](https://stackoverflow.com/a/15171030/12959962).
+<a href="https://stackoverflow.com/a/15171030/12959962" target="_blank">Further explanation.</a>
 
 **How to prevent this issue from happening again**
 
@@ -224,5 +230,5 @@ These are the best practices that I found to be the most useful/valuable.
 6. When storing time in UTC, also store the time zone information (e.g., of the market, of the user, of the request).
 7. When storing time in UTC, use ISO 8601 (`YYYY-MM-DDTHH:mm:ss.sssZ`) format for consistency and quick manipulation in many programming languages.
 8. When writing tests that include the "time" parameter, test multiple time zones and edge cases (e.g., UTC+14 and UTC-12, DST transition dates).
-  - We can mock browser's time zone (e.g., see how on [Chromium browsers](https://developer.chrome.com/docs/devtools/sensors)).
-	- We can see a list of time zones and make calculations using [world time buddy](https://www.worldtimebuddy.com/).
+  - We can mock browser's time zone (e.g., see how on <a href="https://developer.chrome.com/docs/devtools/sensors" target="_blank">Chromium browsers</a>).
+	- We can see a list of time zones and make calculations using <a href="https://www.worldtimebuddy.com" target="_blank">world time buddy</a>.
