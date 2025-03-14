@@ -6,27 +6,22 @@ tags: [technology]
 description: What, why and how to review changed code.
 toc: true
 ---
-Before diving into the topic of code reviews, I will be very presumptuous and make a ridiculous assumption: **we need to live**. If you disagree and/or are depressed, please continue reading not because I will cure your depression, but because I list some ideas that *might* motivate you and your team to do some code reviews.
 
-# Back to the basics
-To live, we need to access some **essential resources** (e.g., water, that’s it really). We can easily access them by **paying money**. Furthermore, by paying money, we can access more things that make us comfortable and **happy**.
-
-But **how do we earn money** exactly?
-
-A common way to earn money is to **solve problems** where the solution is rewarded with money. 
+# Assumptions, the problem, and the goal
 
 Usually
-- the *bigger* the problem is, the bigger the reward is
-- the *better* (i.e., higher quality) the solution is, the bigger the reward is
+- the *bigger* the problem, the bigger the reward
+- the *better* (where most common success factors are **higher quality** and **quicker delivery**) the solution, the bigger the reward
 
 So, we have 2 clearly defined **goals** now:
 1. Solve bigger problems
 2. Come up with better solutions
 
-Solving bigger problems is easy: just **hire more** people! However, there is a caveat; this **decreases the reward** of the solutions. 
+Solving bigger problems is easy: **hire more** people! However, there is a caveat; this **decreases the reward** of the solutions. 
 
 # Solving "bigger and better"
-Hiring more people decreases the *quality* of the solution, and it's pretty hard to maintain or increase it. This problem is commonly known as the **project management triangle**[.](https://en.wikipedia.org/wiki/Project_management_triangle)
+
+Hiring more people decreases the *quality* of the solution, and it's pretty hard to maintain or increase it. This problem is commonly known as the [**project management triangle**](https://en.wikipedia.org/wiki/Project_management_triangle).
 
 <figure>
 	<img src="/how-to-steal-my-heart-and-approval-a-code-reviewers-dream/project-management-triangle-with-comments.png" alt="project management triangle with comments">
@@ -35,7 +30,7 @@ Hiring more people decreases the *quality* of the solution, and it's pretty hard
 
 Imagine that we are a dot in the triangle. We may only stay in a single spot. According to this triangle, when we hire more people, the cost will increase, so the time and the amount of features it introduces will decrease.
 
-Depending on the business model, the project managers might be more lenient on one side; however, most businesses aim to be in the middle. Luckily, there are **many examples** of companies and their practices which **proved to be successful** in solving big problems by managing many people and yet maintaining a high quality for their solutions. So, I went through some of the most money-generating big and tech businesses, and read their **Software Engineering handbooks** (e.g., [Google's handbook](https://abseil.io/resources/swe-book)). I learned how they achieve high-quality solutions with many people, and I will be sharing my understanding.
+Depending on the business model, the project managers might be more lenient on one side; however, most businesses aim to be in the middle. Luckily, there are **many examples** of companies and their practices which **proved to be successful** in solving big problems by managing many people and yet maintaining a high quality for their solutions. So, I went through some of the most money-generating big and tech businesses, and read their **Software Engineering handbooks** (e.g., [Google's handbook](https://abseil.io/resources/swe-book)). I learned how they achieve high-quality solutions with many people under a tight deadline, and I will be sharing my understanding.
 
 # Why review someone else code?
 
@@ -185,7 +180,7 @@ Google has a step before submitting the change: **presubmit**. A presubmit proce
 
 # Conclusion
 
-We started the discussion with needing money to live and be happier. Then, we mentioned how to make money (e.g., solving problems), and what increases the monetary reward (e.g., the bigger the problem and the better the solution, the bigger the reward).
+We mentioned what increases the monetary reward (e.g., the bigger the problem and the better the solution, the bigger the reward).
 
 After finding the motivation to do bigger and better, we provided an example to find the origins of code review. Then, we went into detail on why code review is important, and the best practices that Google follows to maximise the reward.
 
