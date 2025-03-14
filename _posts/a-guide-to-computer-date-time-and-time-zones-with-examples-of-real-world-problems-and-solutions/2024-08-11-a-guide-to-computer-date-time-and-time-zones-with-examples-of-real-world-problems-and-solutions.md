@@ -28,7 +28,7 @@ But how did the computers know their *current* time?
 
 <small id="definition-epoch"><sup>[[1]](#reference-epoch)</sup>**Epoch** (noun): the beginning of a period in the history of someone or something.</small>
 
-# How computers' know their current time
+# How do computers know their current time
 
 There are 2 clocks<small id="reference-clock"><sup>[[2]](#definition-clock)</sup></small> in a computer to track the current time:
 1. **Hardware clock** (a.k.a. Real-time clock): The machine's hardware tracks a clock using a battery and circuits. It is recommended to set this clock to UTC<small id="reference-UTC"><sup>[[3]](#definition-UTC)</sup></small>, but you can also configure an additional "time zone" property to align this clock with your local time. E.g., Windows sets the hardware's clock to the user's local time; whereas MacOS and Linux set their hardware clock to UTC.
