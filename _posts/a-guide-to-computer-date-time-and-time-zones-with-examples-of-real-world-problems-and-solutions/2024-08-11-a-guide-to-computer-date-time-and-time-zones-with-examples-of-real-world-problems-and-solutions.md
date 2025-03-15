@@ -7,6 +7,8 @@ description: A practical guide to computer date, time and time zones with exampl
 toc: true
 ---
 
+<h1 style="display: none;"></h1>
+
 In this post, you'll learn *why* computers track date<small id="reference-date"><sup>[[1]](#definition-date)</sup></small> and time<small id="reference-time"><sup>[[2]](#definition-time)</sup></small>, *how* they do it, alongside real-world examples; so, you can start building time-based applications without the headache, or easily solve your existing time-related issues.
 
 ---
