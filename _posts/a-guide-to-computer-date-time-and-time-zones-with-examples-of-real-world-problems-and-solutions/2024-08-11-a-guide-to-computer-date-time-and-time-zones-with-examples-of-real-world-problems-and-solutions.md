@@ -6,9 +6,14 @@ tags: [technology]
 description: A practical guide to computer date, time and time zones with examples of real-world problems and solutions.
 toc: true
 ---
-**Date** (noun): A numbered day in a month, often given with the day name, month, and year. A popular format on computers: `YYYY-MM-DD` (e.g., 2024-07-29).
 
-**Time** (noun): The part of existence that is measured in minutes, days, years, etc., or this process considered as a whole. A popular format on computers: `HH:MM:SS` without days, months or years (e.g., 16:59:25).
+In this post, you'll learn *why* computers track date<small id="reference-date"><sup>[[1]](#definition-date)</sup></small> and time<small id="reference-time"><sup>[[2]](#definition-time)</sup></small>, *how* they do it, alongside real-world examples; so, you can start building time-based applications without the headache, or easily solve your existing time-related issues.
+
+---
+
+<small id="definition-date"><sup>[[1]](#reference-date)</sup>**Date** (noun): A numbered day in a month, often given with the day name, month, and year. A popular format on computers: `YYYY-MM-DD` (e.g., 2024-07-29).</small>
+
+<small id="definition-time"><sup>[[2]](#reference-time)</sup>**Time** (noun): The part of existence that is measured in minutes, days, years, etc., or this process considered as a whole. A popular format on computers: `HH:MM:SS` without days, months or years (e.g., 16:59:25).</small>
 
 # Birth of computer time
 
@@ -17,7 +22,7 @@ As computers evolved from human calculators to digital machines, their creators 
 With OS-equipped computers, computer users tackled various challenges, including the need to calculate date and time differences. So, OS engineers developed a time-calculation system.
 
 UNIX (an influential early OS) introduced a solution with 2 assumptions to calculate date and time differences:
-1. **Start date**: UNIX computers established a fixed starting point which is set to January 1 1970, 00:00:00 UTC (i.e., UNIX epoch<small id="reference-epoch"><sup>[[1]](#definition-epoch)</sup></small>). This acts as the starting date and time for most computers, similar to how "Year 0" is set in the Gregorian calendar we use today.
+1. **Start date**: UNIX computers established a fixed starting point which is set to January 1 1970, 00:00:00 UTC (i.e., UNIX epoch<small id="reference-epoch"><sup>[[3]](#definition-epoch)</sup></small>). This acts as the starting date and time for most computers, similar to how "Year 0" is set in the Gregorian calendar we use today.
 2. **Time representation**: UNIX time is measured as the number of seconds (or milliseconds) elapsed since the UNIX epoch. E.g., as I write this sentence within this blog post, the UNIX time is 1723306952 seconds, indicating that many seconds have passed since the start of the UNIX epoch. 
 
 Some problems included calculating date and time differences that included the *current* date and time, so computer users needed to know the current time. 
@@ -26,19 +31,19 @@ But how did the computers know their *current* time?
 
 ---
 
-<small id="definition-epoch"><sup>[[1]](#reference-epoch)</sup>**Epoch** (noun): the beginning of a period in the history of someone or something.</small>
+<small id="definition-epoch"><sup>[[3]](#reference-epoch)</sup>**Epoch** (noun): The beginning of a period in the history of someone or something.</small>
 
 # How computers track time
 
-There are 2 clocks<small id="reference-clock"><sup>[[2]](#definition-clock)</sup></small> in a computer to track the current time:
-1. **Hardware clock** (a.k.a. Real-time clock): The machine's hardware tracks a clock using a battery and circuits. It is recommended to set this clock to UTC<small id="reference-UTC"><sup>[[3]](#definition-UTC)</sup></small>, but you can also configure an additional "time zone" property to align this clock with your local time. E.g., Windows sets the hardware's clock to the user's local time; whereas MacOS and Linux set their hardware clock to UTC.
+There are 2 clocks<small id="reference-clock"><sup>[[4]](#definition-clock)</sup></small> in a computer to track the current time:
+1. **Hardware clock** (a.k.a. Real-time clock): The machine's hardware tracks a clock using a battery and circuits. It is recommended to set this clock to UTC<small id="reference-UTC"><sup>[[5]](#definition-UTC)</sup></small>, but you can also configure an additional "time zone" property to align this clock with your local time. E.g., Windows sets the hardware's clock to the user's local time; whereas MacOS and Linux set their hardware clock to UTC.
 2. **System clock**: The system clock is dependent on the hardware clock, and managed by the OS's kernel. The OS reads the hardware clock, but also is in sync with the other clocks on the internet. When an app wants to access your machine's clock, it accesses this clock.
 
 ---
 
-<small id="definition-clock"><sup>[[2]](#reference-clock)</sup>**Clock** (noun): A mechanical or electrical device for measuring time, indicating hours, minutes, and sometimes seconds by hands on a round dial or by displayed figures.</small>
+<small id="definition-clock"><sup>[[4]](#reference-clock)</sup>**Clock** (noun): A mechanical or electrical device for measuring time, indicating hours, minutes, and sometimes seconds by hands on a round dial or by displayed figures.</small>
 
-<small id="definition-UTC"><sup>[[3]](#reference-UTC)</sup>**Coordinated Universal Time (UTC)** (noun): a time standard that follows the Greenwich Mean Time (GMT) without Daylight Savings Time (DST) adjustments.</small>
+<small id="definition-UTC"><sup>[[5]](#reference-UTC)</sup>**Coordinated Universal Time (UTC)** (noun): A time standard that follows the Greenwich Mean Time (GMT) without Daylight Savings Time (DST) adjustments.</small>
 
 # Accessing your computer's time values
 
