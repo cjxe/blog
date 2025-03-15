@@ -1,16 +1,16 @@
 ---
-title: "A guide to computer date, time and time zones with examples of real-world problems and solutions"
+title: "Understanding computer date, time and time zones"
 date: 2024-08-11 17:52:49 +02:00
 modified: 2025-03-09 08:11:45 +00:00
 tags: [technology]
-description: A guide to computer date, time and time zones with examples of real-world problems and solutions.
+description: A practical guide to computer date, time and time zones with examples of real-world problems and solutions.
 toc: true
 ---
 **Date** (noun): A numbered day in a month, often given with the day name, month, and year. A popular format on computers: `YYYY-MM-DD` (e.g., 2024-07-29).
 
 **Time** (noun): The part of existence that is measured in minutes, days, years, etc., or this process considered as a whole. A popular format on computers: `HH:MM:SS` without days, months or years (e.g., 16:59:25).
 
-# The birth of computer time
+# Birth of computer time
 
 As computers evolved from human calculators to digital machines, their creators required practical methods to improve computers' user experience. So, they developed operating systems (OS).
 
@@ -28,7 +28,7 @@ But how did the computers know their *current* time?
 
 <small id="definition-epoch"><sup>[[1]](#reference-epoch)</sup>**Epoch** (noun): the beginning of a period in the history of someone or something.</small>
 
-# How do computers know their current time
+# How computers track time
 
 There are 2 clocks<small id="reference-clock"><sup>[[2]](#definition-clock)</sup></small> in a computer to track the current time:
 1. **Hardware clock** (a.k.a. Real-time clock): The machine's hardware tracks a clock using a battery and circuits. It is recommended to set this clock to UTC<small id="reference-UTC"><sup>[[3]](#definition-UTC)</sup></small>, but you can also configure an additional "time zone" property to align this clock with your local time. E.g., Windows sets the hardware's clock to the user's local time; whereas MacOS and Linux set their hardware clock to UTC.
@@ -40,7 +40,11 @@ There are 2 clocks<small id="reference-clock"><sup>[[2]](#definition-clock)</sup
 
 <small id="definition-UTC"><sup>[[3]](#reference-UTC)</sup>**Coordinated Universal Time (UTC)** (noun): a time standard that follows the Greenwich Mean Time (GMT) without Daylight Savings Time (DST) adjustments.</small>
 
-# Accessing the system clock in an OS (e.g., MacOS and Linux)
+# Accessing your computer's time values
+
+## With the terminal
+
+### System clock
 
 If you are on MacOS or Linux, you may access the system clock by running the `date` command in your bash shell:
 
@@ -55,7 +59,7 @@ Thu 28 Mar 2024 17:10:10 UTC
 1711645810 # The number of seconds that passed since the UNIX epoch. The `-u` flag is applied by default. Think of this number when you think about the _system clock_.
 ```
 
-# Accessing the local time and time zone
+### Currently selected time zone
 
 "Internally, your Mac is using UTC. Your Mac is not "in CET". It is "in UTC with a default `TZ` setting of `CET`". `TZ` environment variable controls how a local time is derived from the underlying UTC when a local timestamp or timezone offset is required. If you change `TZ`, then local timestamps will be shown in the new timezone, but the computer's internal timekeeping in UTC is not affected." <a href="https://stackoverflow.com/a/54524475/12959962" target="_blank">source</a>
 
@@ -67,7 +71,7 @@ Time Zone: Europe/Berlin
 
 Further reading: <a href="https://sdimitro.github.io/post/keeping-track-time" target="_blank">how do computers store and maintain all the different time zone information to keep up with each country’s ever-changing time zone rule?</a>
 
-# Accessing the system clock and time zone using a programming language (e.g., JavaScript)
+## With a programming language
 
 Your favourite browser (and many other apps) reads the system clock and the `TZ` environment variable. Open up your browser's DevTools and navigate to the console. Then, run the following code:
 
@@ -84,11 +88,11 @@ Thu Mar 28 2024 18:10:10 GMT+0100 (Central European Standard Time) // Similar to
 Europe/Berlin // Similar to running `sudo systemsetup -gettimezone` in a bash shell.
 ```
 
-# Some time calculation problems and their solutions that I came across while software engineering
+# Troubleshooting time-related issues in real-world applications
 
 **Disclaimer**: I obfuscated sensitive information (such as the name of the market/exchange) to prevent any sensitive information from being leaked.
 
-## Problem #1: Analytics for the Fiji market are 1 hour behind Fiji's current time
+## Problem #1: Fiji market's analytics are 1 hour behind Fiji's current time
 
 **Background**
 
@@ -118,7 +122,7 @@ We updated our external library that provides time zone information for all coun
 
 Automatically update the external library that provides time zone information for all countries.
 
-## Problem #2: Relative time difference (e.g., 9 hours ago) is showing the wrong information
+## Problem #2: Incorrect relative time display (e.g., 9 hours ago)
 
 **Background**
 
@@ -164,20 +168,20 @@ const currentDate = new Date(new Date().toLocaleString('en-us', { timeZone: curr
 
 The database should store the time in UTC (instead of local time).
 
-## Problem #3: Discrepancy between Data Manipulation Service Inc. and UI
+## Problem #3: Discrepancy between Data Manipulation Service and the UI
 
 **Background**
 
 1. The UI has a calendar component that allows the user to select a single day, month and year.
-2. The data and network flow throughout the app: UI <--> internal API <-->  Data Manipulation Service Inc. <--> Database
+2. The data and network flow throughout the app: UI <--> internal API <-->  Data Manipulation Service <--> Database
 
 **Actual/current behaviour**
 
-The table in the UI doesn't match the table in Data Manipulation Service Inc..
+The table in the UI doesn't match the table in Data Manipulation Service .
 
 **Expected behaviour**
 
-The table in the UI should match the table in Data Manipulation Service Inc..
+The table in the UI should match the table in Data Manipulation Service.
 
 **Investigation result**
 
@@ -189,7 +193,7 @@ and set the end date to "10/01/2024",
 
 then the UI sends "10/01/2024 14:59:59 UTC" to the internal API,
 
-then Data Manipulation Service Inc. makes a search query that is 9 hours shorter than expected
+then Data Manipulation Service makes a search query that is 9 hours shorter than expected
 
 **Solution**
 
@@ -218,9 +222,9 @@ const endOfDayDateTime = zonedTimeToUtc(endOfDay(dateRange.to), 'UTC');
 
 The UI should send time in UTC to the API (instead of local time).
 
-# Best practices when working with date, time and local time in an international app
+# Best practices
 
-These are the best practices that I found to be the most useful/valuable.
+These are the best practices that I found to be the most valuable.
 
 1. Use UTC for everything excluding when displaying the time to the user.
 2. When displaying the time to the user, indicate the time zone of the displayed time.
