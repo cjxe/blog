@@ -9,6 +9,8 @@ toc: true
 
 <h1 style="display: none;"></h1>
 
+The nature of time is complex for many reasons, one of which is different parts of the world experience it differently. This complexity creates challenges in technology by preventing us from connecting easily across the globe. So, computers must track time precisely; but varying time zones, daylight savings, and shifts in time calculations complicate the issue.
+
 In this post, you'll learn *why* computers track date<small id="reference-date"><sup>[[1]](#definition-date)</sup></small> and time<small id="reference-time"><sup>[[2]](#definition-time)</sup></small>, *how* they do it, alongside real-world examples; so, you can start building time-based applications without the headache, or easily solve your existing time-related issues.
 
 ---
