@@ -19,7 +19,7 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
-  scroll-padding-top: 8px;
+  scroll-padding-top: 6px;
     
   @include media-query($on-mobile) {
     scroll-padding-top: 56px;
