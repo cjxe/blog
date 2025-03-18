@@ -1,22 +1,24 @@
 ---
-title: "How to communicate effectively: a simple and practical guide"
+title: "How to communicate effectively"
 date: 2024-10-20 07:29:23 +00:00
 tags: [productivity, psychology]
 description: A simple and practical guide to communicating with examples of real-world messages.
 toc: true
 ---
 
-Perhaps *communicating* is the most important skill when working with other people, and it is required for greater success. In this blog post, I list my thought process: before, while and after communicating.
+Big achievements usually come from teamwork, which starts with communication. But *starting* doesn't make it easy. So, poor communication is common, and wastes time for everyone involved.
 
-# Why should you read *my* thought process?
+In this post, I’ll share my approach to effective communication, helping you and your team get things done faster with less frustration.
 
-- I value and take action to deliver high-impact solutions simply and quickly.
-- I received (and continue to receive) the same feedback at school, university, work and personal life: "Baran, your communication is very clear and effective to get shit done quickly.".
-- I value engineering and automation to the point that they are no longer valuable.
+# High-level effective communication steps
 
-# My thought process on effective communication
+1. Plan before communicating.
+2. Communicate.
+3. Follow up after communicating.
 
-## Plan (before communicating)
+# Detailed breakdown of each step
+
+## 1. Plan before communicating.
 
 1. Acknowledge that you are talking to a human like yourself, so communicate with the recipient as you would like to be addressed by empathising.
 2. Keep it simple to maximise clarity and focus.
@@ -40,9 +42,9 @@ Perhaps *communicating* is the most important skill when working with other peop
 	- E.g., Escalating every issue will damage relationships in the long run; so get their minimum attention at the level that is required to make the most impact to solve your problem.
 	- E.g., Verbal communication has a higher impact which resolves the problem quicker compared to written communication.
 
-## Deliver (while communicating)
+## 2. Communicate.
 
-1. Follow a message structure to keep the communication flow organised:
+- Follow a message structure to keep the communication flow organised:
 
 ```md
 # Greeting (optional)
@@ -97,7 +99,7 @@ Perhaps *communicating* is the most important skill when working with other peop
 <ol>
   <li>
     <figure>
-      <img src="/how-to-communicate-effectively-a-simple-and-practical-guide/example-message-1-do-you-wear-merino.png" alt="Example message #1">
+      <img src="/how-to-communicate-effectively-a-simple-and-practical-guide/example-message-1-confirmation-design.png" alt="Example message #1">
     </figure>
   </li>
   <li>
@@ -112,11 +114,11 @@ Perhaps *communicating* is the most important skill when working with other peop
   </li>
 </ol>
 
-## Follow up (after communicating)
+## 3. Follow up after communicating.
 
-1. Agree on action items (if any) and a deadline to catch up (if necessary).
+- Agree on action items (if any) and a deadline to catch up (if necessary).
 
-# Wrapping up
+---
 
 That is it from me. What did I miss? Comment below and I will read it.
 
