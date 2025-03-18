@@ -6,7 +6,7 @@ description: A simple and practical guide to communicating with examples of real
 toc: true
 ---
 
-Big achievements usually come from teamwork, which starts with communication. But *starting* doesn't make it easy. So, poor communication is common, and wastes time for everyone involved.
+Big achievements usually come from teamwork, which starts with **communication**. But just because teams rely on it doesn't make it an easy skill to master. As a result, poor communication is common and wastes everyone's time. Fortunately, it doesn't have to be this ineffective.
 
 In this post, I’ll share my approach to effective communication, helping you and your team get things done faster with less frustration.
 
