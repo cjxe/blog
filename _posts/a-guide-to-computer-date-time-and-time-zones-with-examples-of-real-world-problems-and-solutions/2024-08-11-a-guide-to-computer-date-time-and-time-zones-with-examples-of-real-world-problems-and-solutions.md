@@ -47,7 +47,7 @@ There are 2 clocks<small id="reference-clock"><sup>[[4]](#definition-clock)</sup
 
 <small id="definition-clock"><sup>[[4]](#reference-clock)</sup>**Clock** (noun): A mechanical or electrical device for measuring time, indicating hours, minutes, and sometimes seconds by hands on a round dial or by displayed figures.</small>
 
-<small id="definition-UTC"><sup>[[5]](#reference-UTC)</sup>**Coordinated Universal Time (UTC)** (noun): A time standard that follows the Greenwich Mean Time (GMT) without Daylight Savings Time (DST) adjustments.</small>
+<small id="definition-UTC"><sup>[[5]](#reference-UTC)</sup>**Coordinated Universal Time (UTC)** (noun): A time standard that follows the Greenwich Mean Time (GMT) time zone. UTC is usually used in scientific and computing contexts, whereas GMT is used in everyday life contexts.</small>
 
 # Accessing your computer's time values
 
